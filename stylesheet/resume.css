@@ -13,5 +13,11 @@ p.a {
     /* For desktop */
     div.a {
         max-width: 970px;
+        padding: 10px;
+        background: white;
+    }
+    body, html {
+        padding-top: 10px;
+        background: #e0e0e0 !important;
     }
 }
