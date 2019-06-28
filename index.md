@@ -14,7 +14,7 @@ permalink: /index.html
 | 8 | Programming languages |
 | 9 | |
 | 10| [Github profile](https://www.github.com/{{site.github_username}}) |
-| 11 | I’m currently practicing HTML, CSS, JavaScript, Jekyll, and Bootstrap, of which this website is a result. If you have a project related to that or any other technology listed here and think I could help with it, contact me. |
+| 11 | I’m currently practicing HTML, CSS, JavaScript, JQuery, Jekyll, and Bootstrap, of which this website is a result. If you have a project related to that or any other technology listed here and think I could help with it, contact me. |
 | 12 | Currently looking for work. |
 | 13 | <a href='/blog' id="t"></a> |
 | 14 | [Old website](/old-index.html) |

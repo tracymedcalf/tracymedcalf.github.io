@@ -29,3 +29,7 @@ span.title {
     font-size: 2rem;
 }
 
+footer {
+    bottom: 0;
+    position: fixed;
+}
