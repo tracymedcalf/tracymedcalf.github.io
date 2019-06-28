@@ -8,6 +8,7 @@ div#my-textarea {
     background: black;
     outline: none;
     color: white;
+    caret-color: orange;
 }
 
 a {
@@ -23,3 +24,15 @@ td:nth-child(1){
     color: #928374;        
 }
 
+span {
+   font-size: 2rem;
+}
+
+//p{
+//    counter-increment: line;
+//}
+//p:before{
+//    content: counter(line);
+//    color: #928374;
+//    padding: 2px;
+//}
