@@ -1,0 +1,25 @@
+body, html {
+    padding-top: 5px;
+}
+
+div.jumbotron {
+    background: #e0e0e0;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop */
+    div.my-box {
+        max-width: 970px;
+        padding: 10px;
+        background: white;
+    }
+
+    div.jumbotron {
+        min-height: 100%;
+    }
+
+    body, html {
+        padding-top: 10px;
+        background: #e0e0e0 !important;
+    }
+}
