@@ -1,18 +1,18 @@
 body, html {
-   background: black !important;
+   background: #3f012c !important;
    padding-top: 5px;
    font: 1rem Inconsolata, monospace;
+   color: white;
 }
 
 div#my-textarea {
-    background: black;
     outline: none;
     color: white;
     caret-color: orange;
 }
 
 a {
-    color: #fabd2f;
+    color: #5fd75f;
 }
 
 td {
@@ -21,18 +21,11 @@ td {
 }
 
 td:nth-child(1){
-    color: #928374;        
+    color: #ffd700;
 }
 
-span {
-   font-size: 2rem;
+span.title {
+    color: 	#5f87ff;
+    font-size: 2rem;
 }
 
-//p{
-//    counter-increment: line;
-//}
-//p:before{
-//    content: counter(line);
-//    color: #928374;
-//    padding: 2px;
-//}
