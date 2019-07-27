@@ -17860,7 +17860,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (161:12) {#if (tile.terrain.svg) }
+    // (159:12) {#if (tile.terrain.svg) }
     function create_if_block(ctx) {
     	var object, object_title_value, object_data_value;
 
@@ -17870,7 +17870,7 @@ var app = (function () {
     			attr(object, "title", object_title_value = ctx.tile.terrain.svg);
     			attr(object, "type", "image/svg+xml");
     			attr(object, "data", object_data_value = "assets/" + ctx.tile.terrain.svg + ".svg");
-    			add_location(object, file$2, 161, 16, 4155);
+    			add_location(object, file$2, 159, 16, 4096);
     		},
 
     		m: function mount(target, anchor) {
@@ -17895,7 +17895,7 @@ var app = (function () {
     	};
     }
 
-    // (155:4) {#each grid.tiles as tile, index}
+    // (153:4) {#each grid.tiles as tile, index}
     function create_each_block_1(ctx) {
     	var div, img, img_id_value, img_src_value, img_alt_value, t0, t1, div_class_value, dispose;
 
@@ -17913,9 +17913,9 @@ var app = (function () {
     			attr(img, "alt", img_alt_value = ctx.tile.coordinates);
     			attr(img, "draggable", "true");
     			attr(img, "class", "svelte-i87mdq");
-    			add_location(img, file$2, 156, 16, 3899);
+    			add_location(img, file$2, 154, 16, 3840);
     			attr(div, "class", div_class_value = "tile " + (ctx.tile.isWorked ? 'worked' : '') + " svelte-i87mdq");
-    			add_location(div, file$2, 155, 8, 3789);
+    			add_location(div, file$2, 153, 8, 3730);
 
     			dispose = [
     				listen(img, "click", ctx.pawnClicked),
@@ -17975,7 +17975,7 @@ var app = (function () {
     	};
     }
 
-    // (172:4) {#each options as  { text, handler}
+    // (170:4) {#each options as  { text, handler}
     function create_each_block(ctx) {
     	var button, t_value = ctx.text, t, dispose;
 
@@ -17987,7 +17987,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			add_location(button, file$2, 172, 8, 4522);
+    			add_location(button, file$2, 170, 8, 4463);
     			dispose = listen(button, "click", click_handler);
     		},
 
@@ -18014,7 +18014,7 @@ var app = (function () {
     }
 
     function create_fragment$2(ctx) {
-    	var link, t0, div0, t1, button0, t3, button1, t5, t6, button2, t8, div1, t9, button3, t11, button4, t13, current, dispose;
+    	var div0, t0, button0, t2, button1, t4, t5, button2, t7, div1, t8, button3, t10, button4, t12, current, dispose;
 
     	var each_value_1 = ctx.grid.tiles;
 
@@ -18039,55 +18039,49 @@ var app = (function () {
 
     	return {
     		c: function create() {
-    			link = element("link");
-    			t0 = space();
     			div0 = element("div");
 
     			for (var i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t1 = space();
+    			t0 = space();
     			button0 = element("button");
     			button0.textContent = "+";
-    			t3 = space();
+    			t2 = space();
     			button1 = element("button");
     			button1.textContent = "-";
-    			t5 = space();
+    			t4 = space();
     			progresswheel.$$.fragment.c();
-    			t6 = space();
+    			t5 = space();
     			button2 = element("button");
     			button2.textContent = "next turn";
-    			t8 = space();
+    			t7 = space();
     			div1 = element("div");
 
     			for (var i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t9 = space();
+    			t8 = space();
     			button3 = element("button");
     			button3.textContent = "left";
-    			t11 = space();
+    			t10 = space();
     			button4 = element("button");
     			button4.textContent = "right";
-    			t13 = space();
+    			t12 = space();
     			ingamemenu.$$.fragment.c();
-    			attr(link, "rel", "stylesheet");
-    			attr(link, "type", "text/css");
-    			attr(link, "href", "main.css");
-    			add_location(link, file$2, 151, 0, 3592);
     			attr(div0, "class", "grid-container svelte-i87mdq");
     			set_style(div0, "grid-template-columns", "repeat(" + ctx.grid.numColumns + ", auto)");
-    			add_location(div0, file$2, 153, 0, 3651);
-    			add_location(button0, file$2, 166, 0, 4302);
-    			add_location(button1, file$2, 167, 0, 4343);
-    			add_location(button2, file$2, 169, 0, 4401);
+    			add_location(div0, file$2, 151, 0, 3592);
+    			add_location(button0, file$2, 164, 0, 4243);
+    			add_location(button1, file$2, 165, 0, 4284);
+    			add_location(button2, file$2, 167, 0, 4342);
     			attr(div1, "id", "button-panel");
     			attr(div1, "class", "svelte-i87mdq");
-    			add_location(div1, file$2, 170, 0, 4448);
-    			add_location(button3, file$2, 175, 0, 4608);
-    			add_location(button4, file$2, 176, 0, 4660);
+    			add_location(div1, file$2, 168, 0, 4389);
+    			add_location(button3, file$2, 173, 0, 4549);
+    			add_location(button4, file$2, 174, 0, 4601);
 
     			dispose = [
     				listen(button0, "click", ctx.incColumns),
@@ -18103,34 +18097,32 @@ var app = (function () {
     		},
 
     		m: function mount(target, anchor) {
-    			insert(target, link, anchor);
-    			insert(target, t0, anchor);
     			insert(target, div0, anchor);
 
     			for (var i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(div0, null);
     			}
 
-    			insert(target, t1, anchor);
+    			insert(target, t0, anchor);
     			insert(target, button0, anchor);
-    			insert(target, t3, anchor);
+    			insert(target, t2, anchor);
     			insert(target, button1, anchor);
-    			insert(target, t5, anchor);
+    			insert(target, t4, anchor);
     			mount_component(progresswheel, target, anchor);
-    			insert(target, t6, anchor);
+    			insert(target, t5, anchor);
     			insert(target, button2, anchor);
-    			insert(target, t8, anchor);
+    			insert(target, t7, anchor);
     			insert(target, div1, anchor);
 
     			for (var i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
 
-    			insert(target, t9, anchor);
+    			insert(target, t8, anchor);
     			insert(target, button3, anchor);
-    			insert(target, t11, anchor);
+    			insert(target, t10, anchor);
     			insert(target, button4, anchor);
-    			insert(target, t13, anchor);
+    			insert(target, t12, anchor);
     			mount_component(ingamemenu, target, anchor);
     			current = true;
     		},
@@ -18200,38 +18192,36 @@ var app = (function () {
 
     		d: function destroy(detaching) {
     			if (detaching) {
-    				detach(link);
-    				detach(t0);
     				detach(div0);
     			}
 
     			destroy_each(each_blocks_1, detaching);
 
     			if (detaching) {
-    				detach(t1);
+    				detach(t0);
     				detach(button0);
-    				detach(t3);
+    				detach(t2);
     				detach(button1);
-    				detach(t5);
+    				detach(t4);
     			}
 
     			destroy_component(progresswheel, detaching);
 
     			if (detaching) {
-    				detach(t6);
+    				detach(t5);
     				detach(button2);
-    				detach(t8);
+    				detach(t7);
     				detach(div1);
     			}
 
     			destroy_each(each_blocks, detaching);
 
     			if (detaching) {
-    				detach(t9);
+    				detach(t8);
     				detach(button3);
-    				detach(t11);
+    				detach(t10);
     				detach(button4);
-    				detach(t13);
+    				detach(t12);
     			}
 
     			destroy_component(ingamemenu, detaching);
