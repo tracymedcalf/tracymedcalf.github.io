@@ -1,0 +1,14 @@
+<svg 
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 100 100">
+<defs>
+<rect id="rect1" width="20" height="100" fill="rgb(0,190,0)" />
+<rect id="rect2" width="20" height="100" fill="rgb(0,160,0)" />
+</defs>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect1" x="0"/>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect2" x="20"/>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect1" x="40"/>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect2" x="60"/>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rect1" x="80"/>
+Sorry, your browser does not support inline SVG.
+</svg>
