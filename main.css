@@ -5,25 +5,27 @@
     box-sizing: border-box;
 }
 
-body {
+.site {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 28px;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
 }
 
 .container {
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding: 60px 50px;
-    max-width: 700px;
+    border-radius: 14px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+    padding: 34px 36px;
+    max-width: 900px;
     width: 100%;
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.6s ease-out;
+    margin: 0 auto;
 }
 
 @keyframes fadeInUp {
@@ -37,97 +39,129 @@ body {
     }
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 30px;
+/* Header layout: brand | nav | search */
+.site-header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
 }
 
-h1 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-    color: #667eea;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+h1.site-title {
+    font-size: 1.8rem;
+    margin: 0 0 4px 0;
+    color: #222;
     font-weight: 700;
 }
 
-.title {
-    font-size: 1.4em;
+p.site-tagline {
+    margin: 0;
     color: #666;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-size: 0.95rem;
 }
 
-.content {
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
-
-.content p {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.skills {
-    margin-top: 35px;
-}
-
-.skills h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 600;
-}
-
-.skill-tags {
+.brand {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
-.tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Navigation */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.tag:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+.main-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.18s ease, color 0.18s ease;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 2px solid #f0f0f0;
+.main-nav ul li a:hover {
+    background: linear-gradient(90deg, rgba(102,126,234,0.12), rgba(118,75,162,0.12));
+}
+
+.search input[type="search"] {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    min-width: 180px;
+}
+
+/* Posts list */
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.post {
+    padding: 18px 16px;
+    border-radius: 10px;
+    background: #fbfbfd;
+    border: 1px solid #f0f0f3;
+}
+
+.post header h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+}
+
+.post .excerpt {
+    margin: 8px 0 0 0;
+    color: #555;
+}
+
+.meta {
+    margin-top: 10px;
     color: #888;
-    font-size: 0.95em;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
+.site-footer {
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 14px;
+    text-align: center;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 800px) {
+    .site-header .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+    }
+
+    .search input[type="search"] {
+        min-width: 140px;
+    }
+
     .container {
-        padding: 40px 30px;
+        padding: 24px;
     }
+}
 
-    h1 {
-        font-size: 2.2em;
-    }
-
-    .title {
-        font-size: 1.2em;
-    }
-
-    .content p {
-        font-size: 1em;
+@media (max-width: 420px) {
+    .search input[type="search"] {
+        width: 100%;
+        min-width: 0;
     }
 }
