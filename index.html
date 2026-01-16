@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Notes & Essays</title>
+    <meta name="description" content="Thoughtful writing on machine learning." />
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+</head>
+<body class="site">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">
+                <h1 class="site-title">Tracy Medcalf</h1>
+                <p class="site-tagline">Notes on Machine Learning, Generative AI, and Probabilistic Programming.</p>
+            </a>
+
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/tags/">Tags</a></li>
+                    <li><a href="/archive/">Archive</a></li>
+                    <li><a href="/feed.xml">Subscribe</a></li>
+                </ul>
+            </nav>
+
+            <div class="search">
+                <label for="q" class="visually-hidden">Search posts</label>
+                <input id="q" type="search" placeholder="Search posts…" aria-label="Search posts" />
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="posts" aria-label="Recent posts">
+            <article class="post" data-title="Refactoring the stylesheet">
+                <header>
+                    <h3><a href="/posts/refactoring-stylesheet.html">Refactoring the stylesheet</a></h3>
+                    <time datetime="2025-12-05">Dec 5, 2025</time>
+                </header>
+                <p class="excerpt">Practical steps to tame a growing CSS codebase: structure, naming, and practical trade-offs.</p>
+                <p class="meta"><span class="tags">tags: <a href="/tags/css/">css</a>, <a href="/tags/frontend/">frontend</a></span></p>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <time datetime="2026">2026</time> Tracy Medcalf — <a href="/privacy/">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Lightweight client-side search: filters visible posts by title/excerpt/tags
+        (function(){
+            const input = document.getElementById('q');
+            const posts = Array.from(document.querySelectorAll('.posts .post'));
+            function normalize(s){ return s.trim().toLowerCase(); }
+            input.addEventListener('input', e => {
+                const q = normalize(e.target.value);
+                if(!q){ posts.forEach(p=>p.style.display=''); return; }
+                posts.forEach(p=>{
+                    const text = normalize(p.textContent || '');
+                    p.style.display = text.includes(q) ? '' : 'none';
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
