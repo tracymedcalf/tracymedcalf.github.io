@@ -33,6 +33,16 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Add custom domain (CNAME)
+        run: |
+          if [ -f build/CNAME ]; then
+            echo "build/CNAME already present"
+          elif [ -f CNAME ]; then
+            cp CNAME build/CNAME
+          else
+            echo "No CNAME file found; skipping"
+          fi
+
       - name: Disable Jekyll
         run: touch build/.nojekyll
 
