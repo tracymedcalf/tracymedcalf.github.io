@@ -4,18 +4,20 @@
 
 # About
 
-This is an example of how you can have _markdown_ in page content!
+Welcome! I'm a machine learning engineer passionate about building intelligent systems 
+that solve real-world problems. I specialize in developing and deploying ML models 
+that make a meaningful impact.
 
-- How
-- **Cool**
-- Is _that_!?
+My work focuses on transforming complex data into actionable insights, leveraging 
+cutting-edge algorithms and technologies to push the boundaries of what's possible 
+with artificial intelligence.
 
-If you like, you can also import markdown into any Svelte page.
+## Areas of Expertise
 
-Anyway, you can find this file here:
-
-```
-src/routes/about/+page.md
-```
-
-Here's the [home link](/) if you wanna go back.
+Machine Learning
+Deep Learning
+Python
+Data Science
+Neural Networks
+Generative AI
+Probabilistic Programming
