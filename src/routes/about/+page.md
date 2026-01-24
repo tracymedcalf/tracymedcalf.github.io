@@ -14,10 +14,16 @@ with artificial intelligence.
 
 ## Areas of Expertise
 
-Machine Learning
-Deep Learning
-Python
-Data Science
-Neural Networks
-Generative AI
-Probabilistic Programming
+* Machine Learning
+
+* Deep Learning
+
+* Python
+
+* Data Science
+
+* Neural Networks
+
+* Generative AI
+
+* Probabilistic Programming
