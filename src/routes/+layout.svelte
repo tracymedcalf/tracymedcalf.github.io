@@ -2,6 +2,7 @@
 <script>
 	import { run } from 'svelte/legacy';
 
+	import 'katex/dist/katex.min.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { currentPage, isMenuOpen } from '../lib/assets/js/store.js';

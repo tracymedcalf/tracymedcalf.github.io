@@ -6,8 +6,6 @@
 
 	let chosen = -1;
 	let computerChoice = -1;
-	let computerIsEven = true;
-	let computerWasEven = computerIsEven;
 	let computerWinCount = 0;
 	let playerWinCount = 0;
 
@@ -32,9 +30,6 @@
 		} else {
 			computerWinCount++;
 		}
-
-		computerWasEven = computerIsEven;
-		computerIsEven = randomInt(2) === 0;
 	}
 
 	// Choose using Markov Chain
@@ -89,10 +84,10 @@
 		This program is based on the Mind-Reading Machine created by Claude Shannon in 1953. It might win so often that it seems like it's cheating. 
 		In fact, the program does not use information about your current choice to determine its choice. Instead, it predicts your choice using a Markov Chain simulation.
 	</p>
+	<p>The computer is Even.</p>
 </div>
 <div>
 	{#if chosen !== -1}	
-		<p>The computer was {computerWasEven ? "Even" : "Odd"}.</p>
 		<p>You chose {chosen === 0 ? "heads" : "tails"}.</p>
 		<p>The computer chose {computerChoice === 0 ? "heads" : "tails"}.</p>
 		<p>The player {playerWins() ? "wins" : "loses"}.</p>
@@ -101,7 +96,6 @@
 {#if chosen !== -1}
 <div>Play again?</div>
 {/if}
-<p>In this round, the computer is {computerIsEven ? "Even" : "Odd"}.</p>
 <div class="counter">
 	<button onclick={() => choose(0)} aria-label="Choose heads">
 		<h1>H</h1>
@@ -111,20 +105,26 @@
 		<h1>T</h1>
 	</button>
 </div>
-<div>Click H for heads or T for tails.</div>
-<p>You're <b>{playerWinCount}-{computerWinCount}</b> against the computer.</p>
+<div class="below-btns">Click H for heads or T for tails.</div>
+<p class="below-btns">You're <b>{playerWinCount}-{computerWinCount}</b> against the computer.</p>
 
 <style>
+	.below-btns {
+		text-align: center;
+	}
+
 	.counter {
 		display: flex;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		justify-content: center;
 		margin: 1rem 0;
 	}
 
 	.counter button {
 		width: 2em;
 		padding: 0;
+		padding-top: 1.2rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -135,52 +135,7 @@
 	}
 
 	.counter button:hover {
-		background-color: var(--color-bg-1);
+		background-color: var(--lightAccent);
 	}
 
-	svg {
-		width: 25%;
-		height: 25%;
-	}
-
-	p {
-		text-align: center;
-	}
-
-	path {
-		vector-effect: non-scaling-stroke;
-		stroke-width: 2px;
-		stroke: #444;
-	}
-
-	.counter-viewport {
-		width: 8em;
-		height: 4em;
-		overflow: hidden;
-		text-align: center;
-		position: relative;
-	}
-
-	.counter-viewport strong {
-		position: absolute;
-		display: flex;
-		width: 100%;
-		height: 100%;
-		font-weight: 400;
-		color: var(--color-theme-1);
-		font-size: 4rem;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.counter-digits {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-
-	.hidden {
-		top: -100%;
-		user-select: none;
-	}
 </style>
