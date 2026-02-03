@@ -5,7 +5,7 @@ updated: "2026-01-24"
 categories:
   - "linear regression"
   - "python"
-coverImage: "/images/a-pile-of-pennies.jpg"
+coverImage: "/images/linear-regression.png"
 excerpt: Check out how heading links work with this starter in this post.
 ---
 
@@ -176,7 +176,7 @@ plt.legend()
 plt.show()
 ```
 
-![A scatter plot showing a line of best fit](/images/linear-regression.png)
+<img src="/images/linear-regression.png" alt="A scatter plot showing a line of best fit" style="max-height: none; width: 100%;">
 
 In just a few lines of code, we got a score that is similar to what we achieved with the SciKit-Learn implementation.
 
