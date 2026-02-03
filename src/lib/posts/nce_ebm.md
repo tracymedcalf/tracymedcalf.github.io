@@ -3,9 +3,10 @@ title: "Deep Energy-Based Model Fitted with Noise Contrastive Estimation"
 date: "2026-01-17"
 updated: "2026-01-24"
 categories:
-  - "sveltekit"
-  - "markdown"
-  - "svelte"
+  - "ebm"
+  - "nce"
+  - "deep learning"
+  - "python"
 coverImage: "/images/wine.jpg"
 coverWidth: 4
 coverHeight: 5

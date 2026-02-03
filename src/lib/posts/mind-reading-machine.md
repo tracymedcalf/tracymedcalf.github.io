@@ -3,8 +3,7 @@ title: "Mind-Reading Machine"
 date: "2026-01-24"
 updated: "2026-01-24"
 categories:
-  - "sveltekit"
-  - "markdown"
+  - "markov chain"
 coverImage: "/images/a-pile-of-pennies.jpg"
 excerpt: Check out how heading links work with this starter in this post.
 ---
