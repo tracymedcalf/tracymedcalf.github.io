@@ -5,7 +5,7 @@ updated: "2026-01-24"
 categories:
   - "markov chain"
 coverImage: "/images/a-pile-of-pennies.jpg"
-excerpt: Check out how heading links work with this starter in this post.
+excerpt: In which we beat humans in a game of pennies with a simple Markov Chain.
 ---
 
 <script>

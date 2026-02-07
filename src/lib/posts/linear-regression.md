@@ -6,7 +6,7 @@ categories:
   - "linear regression"
   - "python"
 coverImage: "/images/linear-regression.png"
-excerpt: Check out how heading links work with this starter in this post.
+excerpt: We review the code behind an analytic solution to linear regression.
 ---
 
 First, let's use the built-in Scikit-Learn. We'll use the California Housing dataset as that is listed in the documentation as a "regression" dataset.

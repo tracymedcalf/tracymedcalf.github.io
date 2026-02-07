@@ -10,7 +10,18 @@ const config = {
   extensions: [".svelte", ".md"],
   kit: {
     adapter: adapter(),
-    prerender: { entries: ["*", /* ... */] }
+    prerender: {
+      entries: [
+        "*",
+        "/api/posts/page/*",
+        "/blog/category/*/page/",
+        "/blog/category/*/page/*",
+        "/blog/category/page/",
+        "/blog/category/page/*",
+        "/blog/page/",
+        "/blog/page/*",
+      ] 
+    }
   },
   preprocess: [
     mdsvex({
