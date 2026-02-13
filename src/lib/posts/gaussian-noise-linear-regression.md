@@ -7,7 +7,7 @@ categories:
   - "multivariate normal"
   - "statistical modeling"
 coverImage: "/images/gaussian-noise-linear-regression/main_16_0.png"
-excerpt: We create two generative statistical models.
+excerpt: We create and compare two generative statistical models.
 ---
 We will discuss the creation of generative statistical models. For the purposes of demonstration, we'll use the California housing dataset taken from Scikit Learn. "The target variable is the median house value for California districts, expressed in hundreds of thousands of dollars" (8.2. Real world datasets). This dataset has been chosen simply because the target variable is continuous, making it capable of being predicted with linear regression, which is one of the models that we'll be exploring. The other is the Multivariate Normal distribution.
 
@@ -306,3 +306,11 @@ That doesn't look like the same distribution to me.
 In that case, why use it? Sure, you can use the former to predict `y | X`, but you can also do that with with the Multivariate Normal model. Doing so requires more code than what we've written, but not that much more.
 
 In my opinion, if you're trying to create a model that can generate, evaluate the pdf of an observation, and predict, then it's a toss up between the two models. In a future post, we'll be looking at other means of doing the same that also happen to fit the data more faithfully.
+
+## Bibliography
+
+“8.2. Real World Datasets.” Scikit-Learn, https://scikit-learn/stable/datasets/real_world.html. Accessed 10 Feb. 2026.
+
+Shalizi, Cosma. 36-401 Modern Regression, Fall 2017. 2017, https://www.stat.cmu.edu/~larry/=stat401/lecture-04.pdf.
+
+Taboga, Marco. Model Selection Criteria. https://www.statlect.com/fundamentals-of-statistics/model-selection-criteria. Accessed 11 Feb. 2026.
