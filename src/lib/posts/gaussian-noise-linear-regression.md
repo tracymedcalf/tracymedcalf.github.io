@@ -9,7 +9,7 @@ categories:
 coverImage: "/images/gaussian-noise-linear-regression/main_16_0.png"
 excerpt: We create and compare two generative statistical models.
 ---
-We will discuss the creation of generative statistical models. For the purposes of demonstration, we'll use the California housing dataset taken from Scikit Learn. "The target variable is the median house value for California districts, expressed in hundreds of thousands of dollars" (8.2. Real world datasets). This dataset has been chosen simply because the target variable is continuous, making it capable of being predicted with linear regression, which is one of the models that we'll be exploring. The other is the Multivariate Normal distribution.
+We will discuss the creation of generative statistical models. For the purposes of demonstration, we'll use the California housing dataset taken from scikit-learn. "The target variable is the median house value for California districts, expressed in hundreds of thousands of dollars" (8.2. Real world datasets). This dataset has been chosen simply because the target variable is continuous, making it capable of being predicted with linear regression, which is one of the models that we'll be exploring. The other is the Multivariate Normal distribution.
 
 
 ```python
