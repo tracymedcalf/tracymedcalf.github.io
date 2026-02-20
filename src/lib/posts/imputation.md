@@ -1,7 +1,7 @@
 ---
 title: "Imputation Using Random Sampling and K-Nearest Neighbors"
 date: "2026-02-13"
-updated: "2026-02-13"
+updated: "2026-02-20"
 categories:
   - "missing data"
   - "imputation"
@@ -18,7 +18,6 @@ Because it contains categorical features, we'll be using the Titanic dataset hos
 ```python
 from sklearn.datasets import fetch_openml
 from sklearn.impute import KNNImputer
-from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import pandas as pd
 import random
@@ -201,8 +200,8 @@ sdf['sex'].value_counts()
 
 
     sex
-    male      780
-    female    429
+    male      791
+    female    418
     Name: count, dtype: int64
 
 
@@ -259,52 +258,52 @@ sdf.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>3</td>
       <td>0</td>
-      <td>Allison, Miss. Helen Loraine</td>
-      <td>female</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>113781</td>
-      <td>151.55</td>
-      <td>C22 C26</td>
-      <td>S</td>
+      <td>Youseff, Mr. Gerious</td>
+      <td>male</td>
+      <td>45.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2628</td>
+      <td>7.2250</td>
       <td>NaN</td>
+      <td>C</td>
       <td>NaN</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
+      <td>312.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
-      <td>0</td>
-      <td>Vander Planke, Mrs. Julius (Emelia Maria Vande...</td>
-      <td>male</td>
-      <td>31.0</td>
       <td>1</td>
+      <td>1</td>
+      <td>Candee, Mrs. Edward (Helen Churchill Hungerford)</td>
+      <td>male</td>
+      <td>53.0</td>
       <td>0</td>
-      <td>345763</td>
-      <td>18.00</td>
+      <td>0</td>
+      <td>PC 17606</td>
+      <td>27.4458</td>
       <td>NaN</td>
-      <td>S</td>
+      <td>C</td>
+      <td>6</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>Washington, DC</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
+      <td>1</td>
+      <td>Olsson, Mr. Oscar Wilhelm</td>
+      <td>female</td>
+      <td>32.0</td>
       <td>0</td>
-      <td>Wittevrongel, Mr. Camille</td>
-      <td>male</td>
-      <td>36.0</td>
       <td>0</td>
-      <td>0</td>
-      <td>345771</td>
-      <td>9.50</td>
+      <td>347079</td>
+      <td>7.7750</td>
       <td>NaN</td>
       <td>S</td>
-      <td>NaN</td>
+      <td>A</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -312,35 +311,35 @@ sdf.head()
       <th>3</th>
       <td>3</td>
       <td>0</td>
-      <td>Davies, Mr. John Samuel</td>
-      <td>male</td>
-      <td>21.0</td>
-      <td>2</td>
+      <td>Theobald, Mr. Thomas Leonard</td>
+      <td>female</td>
+      <td>34.0</td>
       <td>0</td>
-      <td>A/4 48871</td>
-      <td>24.15</td>
+      <td>0</td>
+      <td>363294</td>
+      <td>8.0500</td>
       <td>NaN</td>
       <td>S</td>
       <td>NaN</td>
+      <td>176.0</td>
       <td>NaN</td>
-      <td>West Bromwich, England Pontiac, MI</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2</td>
+      <td>3</td>
       <td>0</td>
-      <td>Hart, Mr. Benjamin</td>
-      <td>male</td>
-      <td>43.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>F.C.C. 13529</td>
-      <td>26.25</td>
+      <td>Svensson, Mr. Johan</td>
+      <td>female</td>
+      <td>74.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>347060</td>
+      <td>7.7750</td>
       <td>NaN</td>
       <td>S</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Ilford, Essex / Winnipeg, MB</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -352,7 +351,7 @@ In the original dataset, some of the age values are missing. Fortunately, scikit
 
 First, we encode sex as elements of the set $\{0, 1\}$, because
 
-1. I am working under the assumption that `sex` will be useful for determining `body`.
+1. Although it is unlikely to me that sex will predict the age, I want to demonstrate encoding.
 
 2. This feature is currently categorical.
 
@@ -363,8 +362,7 @@ First, we encode sex as elements of the set $\{0, 1\}$, because
 
 ```python
 # Encode the categorical labels
-encoder = LabelEncoder()
-sdf['sex_encoded'] = encoder.fit_transform(sdf['sex'])
+sdf['male'] = pd.get_dummies(sdf['sex'])['male']
 ```
 
 As mentioned, KNNImputer only wants numeric types. We will therefore provide ourselves with a means of selecting only the numeric columns from the dataframe.
@@ -379,7 +377,7 @@ selected_columns
 
 
 
-    Index(['pclass', 'age', 'sibsp', 'parch', 'fare', 'body', 'sex_encoded'], dtype='object')
+    Index(['pclass', 'age', 'sibsp', 'parch', 'fare', 'body'], dtype='object')
 
 
 
@@ -435,99 +433,99 @@ sdf.head()
       <th>boat</th>
       <th>body</th>
       <th>home.dest</th>
-      <th>sex_encoded</th>
+      <th>male</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1.0</td>
+      <td>3.0</td>
       <td>0</td>
-      <td>Allison, Miss. Helen Loraine</td>
-      <td>female</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>113781</td>
-      <td>151.55</td>
-      <td>C22 C26</td>
-      <td>S</td>
-      <td>NaN</td>
-      <td>167.4</td>
-      <td>Montreal, PQ / Chesterville, ON</td>
+      <td>Youseff, Mr. Gerious</td>
+      <td>male</td>
+      <td>45.5</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>2628</td>
+      <td>7.2250</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>NaN</td>
+      <td>312.0</td>
+      <td>NaN</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.0</td>
-      <td>0</td>
-      <td>Vander Planke, Mrs. Julius (Emelia Maria Vande...</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>Candee, Mrs. Edward (Helen Churchill Hungerford)</td>
       <td>male</td>
-      <td>31.0</td>
-      <td>1.0</td>
+      <td>53.0</td>
       <td>0.0</td>
-      <td>345763</td>
-      <td>18.00</td>
+      <td>0.0</td>
+      <td>PC 17606</td>
+      <td>27.4458</td>
       <td>NaN</td>
-      <td>S</td>
-      <td>NaN</td>
-      <td>197.0</td>
-      <td>NaN</td>
-      <td>1.0</td>
+      <td>C</td>
+      <td>6</td>
+      <td>177.2</td>
+      <td>Washington, DC</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.0</td>
-      <td>0</td>
-      <td>Wittevrongel, Mr. Camille</td>
-      <td>male</td>
-      <td>36.0</td>
+      <td>1</td>
+      <td>Olsson, Mr. Oscar Wilhelm</td>
+      <td>female</td>
+      <td>32.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>345771</td>
-      <td>9.50</td>
+      <td>347079</td>
+      <td>7.7750</td>
       <td>NaN</td>
       <td>S</td>
+      <td>A</td>
+      <td>117.4</td>
       <td>NaN</td>
-      <td>156.4</td>
-      <td>NaN</td>
-      <td>1.0</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.0</td>
       <td>0</td>
-      <td>Davies, Mr. John Samuel</td>
-      <td>male</td>
-      <td>21.0</td>
-      <td>2.0</td>
+      <td>Theobald, Mr. Thomas Leonard</td>
+      <td>female</td>
+      <td>34.0</td>
       <td>0.0</td>
-      <td>A/4 48871</td>
-      <td>24.15</td>
+      <td>0.0</td>
+      <td>363294</td>
+      <td>8.0500</td>
       <td>NaN</td>
       <td>S</td>
       <td>NaN</td>
-      <td>171.4</td>
-      <td>West Bromwich, England Pontiac, MI</td>
-      <td>1.0</td>
+      <td>176.0</td>
+      <td>NaN</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.0</td>
+      <td>3.0</td>
       <td>0</td>
-      <td>Hart, Mr. Benjamin</td>
-      <td>male</td>
-      <td>43.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>F.C.C. 13529</td>
-      <td>26.25</td>
+      <td>Svensson, Mr. Johan</td>
+      <td>female</td>
+      <td>74.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>347060</td>
+      <td>7.7750</td>
       <td>NaN</td>
       <td>S</td>
       <td>NaN</td>
-      <td>136.4</td>
-      <td>Ilford, Essex / Winnipeg, MB</td>
-      <td>1.0</td>
+      <td>167.6</td>
+      <td>NaN</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -545,21 +543,21 @@ sdf.isna().sum()
 
 
 
-    pclass            0
-    survived          0
-    name              0
-    sex               0
-    age               0
-    sibsp             0
-    parch             0
-    ticket            0
-    fare              0
-    cabin          1014
-    embarked          2
-    boat            823
-    body              0
-    home.dest       564
-    sex_encoded       0
+    pclass          0
+    survived        0
+    name            0
+    sex             0
+    age             0
+    sibsp           0
+    parch           0
+    ticket          0
+    fare            0
+    cabin        1014
+    embarked        2
+    boat          823
+    body            0
+    home.dest     564
+    male            0
     dtype: int64
 
 
