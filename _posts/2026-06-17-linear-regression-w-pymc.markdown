@@ -235,11 +235,6 @@ print(az.summary(idata, var_names=['mu', 'sigma']))
 
 
 
-    Output()
-
-
-
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 
 
 
@@ -255,17 +250,6 @@ print(az.summary(idata, var_names=['mu', 'sigma']))
     Sampling: [obs]
 
 
-
-    Output()
-
-
-
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-
-
-
-    Output()
 
 
 
@@ -397,12 +381,6 @@ evaluate(model, idata, x_validation)
 
 
 
-    Output()
-
-
-
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
 
 
     Sampling 4 chains for 1_000 tune and 200 draw iterations (4_000 + 800 draws total) took 1 seconds.
@@ -416,22 +394,6 @@ evaluate(model, idata, x_validation)
 
     Sampling: [obs]
 
-
-
-    Output()
-
-
-
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-
-
-
-    Output()
-
-
-
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 
 
 
