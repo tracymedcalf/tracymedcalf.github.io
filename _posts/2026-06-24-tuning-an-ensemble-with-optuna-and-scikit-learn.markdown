@@ -10,7 +10,7 @@ categories:
   - "ensemble"
   - "decision tree"
   - "hyperparameter optimization"
-coverImage: "//assets/images/verdant-stylized-forest.png"
+coverImage: "/assets/images/verdant-stylized-forest.png"
 excerpt: An unorthodox use of Optuna.
 ---
 

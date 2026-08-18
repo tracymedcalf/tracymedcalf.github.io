@@ -1,0 +1,6 @@
+<!-- In _layouts/post.html -->
+{% if page.coverImage %}
+  <img src="{{ page.coverImage | relative_url }}" alt="Cover Image" class="post-cover">
+{% endif %}
+
+{{ content }}

@@ -9,7 +9,7 @@ categories:
   - "Markov Chain Monte Carlo"
   - "Bayesian inference"
   - "probabilistic programming"
-coverImage: "//assets/images/PyMC_banner.svg"
+coverImage: "/assets/images/PyMC_banner.svg"
 excerpt: Discussing the merits of the synthetic-analytic distinction
 ---
 
